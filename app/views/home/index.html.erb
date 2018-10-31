@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%#= javascript_include_tag 'home/jquery-1.12.4.js'%>	
+<link rel="apple-touch-icon" sizes="57x57" href="assets/img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="assets/img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="assets/img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="assets/img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="assets/img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="assets/img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="assets/img/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+<link rel="manifest" href="assets/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="assets/img/ms-icon-144x144.png">   
+<meta name="theme-color" content="#ffffff">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Welcome to Rentorr</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="assets/css/master.css"> -->
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600,700" rel="stylesheet">
+<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<!-- <link rel="stylesheet" href="assets/css/animations.css">
+<link rel="stylesheet" href="assets/css/animations-ie-fix.css">
+<link rel="stylesheet" href="assets/css/jquery.autocompleter.css"> -->
+<style>.trendingiocn img {
+    width: 50px;
+}</style>
+</head>
+
+<body id="ModalUser">
+<header id="header" class="header-light navbar-dark navbar-toggleable-md">
+	<div class="container-fluid">
+		<div class="logo float-left"> <a href="index.html"> 
+			<%= image_tag("/assets/logo.svg", class: "logo-light") %>
+		</a> </div>
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+		<div class="collapse navbar-collapse fl-right" id="navbarNavAltMarkup"> <span id="closeIcon" class="close-nav"> <i class="ion ion-ios-close-empty"> </i> </span>
+			<div class="float-left nav-left">
+				<ul>
+					<li> <a href="javascript:void(0);" title="Rent a Place"> Rent a Place </a> </li>
+					<li> <a href="javascript:void(0);" title="Hire a Contractor "> Hire a Contractor </a> </li>
+					<li> <a href="javascript:void(0);" title="List a Rental "> List a Rental </a> </li>
+				</ul>
+			</div>
+			<div class="auth float-right">
+				<ul>
+					<li> <a href="javascript:void(0);" data-toggle="modal" data-target="#signup-popup" class="btn outer-btn" title="Sign Up"> <i class="ion ion-ios-plus-empty plus" ></i> <span>Sign up</span></a> </li>
+					<li> <a href="javascript:void(0);" data-toggle="modal" data-target="#signin-popup" class="btn outer-btn" title="Sign In"> <i class="ion ion-log-in signin"></i> <span>Sign in</span></a> </li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+<div class="business-container animatedParent  animateOnce">
+	<h1>Hunting For Right Home And Neighborhood</h1>
+	<div class="searchbox" data-id='2'>
+		<input class="float-left form-control" id="field" placeholder="Where will home be for you?" type="search" />
+		<a href="javascript:void(0);" class="btn float-right btn-search"><i class="fa fa-search" aria-hidden="true"></i></a> </div>
+	<div class="searchProperty animated fadeInUp slow go delay-850" data-id='3'>
+		<h2>Search for properties across the South Africa</h2>
+		<a href="javascript:void(0);" class="btn round-btn btn-green-light animated bounceIn slow go " title="Explore Now">Explore Now</a> </div>
+</div>
+
+<!-- Top Trending Place -->
+<div class="top-trends animatedParent animateOnce">
+	<div class="container">
+		<div class="custom-heading animated fadeIn slow go delay-1400 trendingiocn" data-id='4'> 
+		<!-- <img src="assets/img/trending-icon.png" alt="Heading"> -->
+		<%= image_tag("/assets/trending-icon.png") %>
+			<h2>Top trending cities in south africa</h2>
+			<small>Find Thousands of Houses and Properties for Rent!</small> </div>
+
+		<!-- Trends Row -->
+		<div class="mob20">
+			<div class="row animatedParent animateOnce">
+				<div class="col-sm-6 col-lg-4 col-6">
+					<div class="trend-div animated fadeInLeft slow go delay-250" data-id='5'> 
+					<%= image_tag("/assets/img-1.png", class: "menu_icon") %>
+						<div class="overlay-data"> <a href="javascript:void(0);">Cape Town</a> <span class="float-right d-none d-sm-block">31,500<sup>+</sup> Homes</span> </div>
+						<div class="hover-data d-none d-sm-block">
+							<h4>Cape Town</h4>
+							<p> <strong>R1,498</strong> <br>
+								1Bedroom </p>
+							<p> <strong>R1,827</strong> <br>
+								2Bedrooms </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-lg-4 col-6">
+					<div class="trend-div  animated fadeIn slow go delay-250" data-id='6'> 
+					<%= image_tag("/assets/img-2.png", class: "img-fluid") %>
+						<div class="overlay-data"> <a href="javascript:void(0);">Johannesburg</a> <span class="float-right d-none d-sm-block">28,540<sup>+</sup> Homes</span> </div>
+						<div class="hover-data d-none d-sm-block">
+							<h4>Johannesburg</h4>
+							<p> <strong>R1,498</strong> <br>
+								1Bedroom </p>
+							<p> <strong>R1,827</strong> <br>
+								2Bedrooms </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-lg-4 col-6">
+					<div class="trend-div  animated fadeInRight slow go delay-250" data-id='7'> 
+					<%= image_tag("/assets/img-3.png", class: "img-fluid") %>
+						<div class="overlay-data"> <a href="javascript:void(0);">Durban</a> <span class="float-right d-none d-sm-block">24,300<sup>+</sup> Homes</span> </div>
+						<div class="hover-data d-none d-sm-block">
+							<h4>Durban</h4>
+							<p> <strong>R1,498</strong> <br>
+								1Bedroom </p>
+							<p> <strong>R1,827</strong> <br>
+								2Bedrooms </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-lg-4 col-6">
+					<div class="trend-div animated fadeInLeft slow go delay-750" data-id='8'> 
+					<%= image_tag("/assets/img-4.png", class: "img-fluid") %>
+						<div class="overlay-data"> <a href="javascript:void(0);">Pretoria</a> <span class="float-right d-none d-sm-block">22,000<sup>+</sup> Homes</span> </div>
+						<div class="hover-data d-none d-sm-block">
+							<h4>Pretoria</h4>
+							<p> <strong>R1,498</strong> <br>
+								1Bedroom </p>
+							<p> <strong>R1,827</strong> <br>
+								2Bedrooms </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-lg-4 col-6">
+					<div class="trend-div animated fadeIn slow go delay-750" data-id='9'> 
+					<%= image_tag("/assets/img-5.png", class: "img-fluid") %>
+						<div class="overlay-data"> <a href="javascript:void(0);">Bloemfontein</a> <span class="float-right d-none d-sm-block">31,500<sup>+</sup> Homes</span> </div>
+						<div class="hover-data d-none d-sm-block">
+							<h4>Bloemfontein</h4>
+							<p> <strong>R1,498</strong> <br>
+								1Bedroom </p>
+							<p> <strong>R1,827</strong> <br>
+								2Bedrooms </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-lg-4 col-6">
+					<div class="trend-div animated fadeInRight slow go delay-750" data-id='10'> 
+					<%= image_tag("/assets/img-6.png", class: "img-fluid") %>
+						<div class="overlay-data"> <a href="javascript:void(0);">Kimberley</a> <span class="float-right d-none d-sm-block">19,000<sup>+</sup> Homes</span> </div>
+						<div class="hover-data d-none d-sm-block">
+							<h4>Kimberley</h4>
+							<p> <strong>R1,498</strong> <br>
+								1Bedroom </p>
+							<p> <strong>R1,827</strong> <br>
+								2Bedrooms </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-lg-4 col-6">
+					<div class="trend-div  animated fadeInLeft slow go delay-1250" data-id='11'> 
+					<%= image_tag("/assets/img-7.png", class: "img-fluid") %>
+						<div class="overlay-data"> <a href="javascript:void(0);">Port Elizabeth</a> <span class="float-right d-none d-sm-block">22,000<sup>+</sup> Homes</span> </div>
+						<div class="hover-data d-none d-sm-block">
+							<h4>Port Elizabeth</h4>
+							<p> <strong>R1,498</strong> <br>
+								1Bedroom </p>
+							<p> <strong>R1,827</strong> <br>
+								2Bedrooms </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-lg-4 col-6">
+					<div class="trend-div animated fadeIn slow go delay-1250" data-id='12'> 
+					
+					<%= image_tag("/assets/img-8.png", class: "img-fluid") %>
+						<div class="overlay-data"> <a href="javascript:void(0);">Nelspruit</a> <span class="float-right d-none d-sm-block">21,600<sup>+</sup> Homes</span> </div>
+						<div class="hover-data d-none d-sm-block">
+							<h4>Nelspruit</h4>
+							<p> <strong>R1,498</strong> <br>
+								1Bedroom </p>
+							<p> <strong>R1,827</strong> <br>
+								2Bedrooms </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-lg-4 col-6 d-md-none d-lg-block">
+					<div class="trend-div animated fadeInRight slow go delay-1250" data-id='13'> 
+					
+					<%= image_tag("/assets/img-9.png", class: "img-fluid") %>
+						<div class="overlay-data"> <a href="javascript:void(0);">Polokwane</a> <span class="float-right d-none d-sm-block">19,000<sup>+</sup> Homes</span> </div>
+						<div class="hover-data d-none d-sm-block">
+							<h4>Polokwane</h4>
+							<p> <strong>R1,498</strong> <br>
+								1Bedroom </p>
+							<p> <strong>R1,827</strong> <br>
+								2Bedrooms </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="w-100 text-center animated fadeIn slow go"> <a href="javascript:void(0);" title="See All Trending Cities" class="custom-btn round-btn btn-dark-gray m-t-80 animated bounceIn slow go "> See All Trending Cities </a> </div>
+	</div>
+</div>
+
+<!-- Stay Information -->
+<div class="stay-info animatedParent animateOnce">
+	<div class="container">
+		<div class="custom-heading animated fadeIn slow go delay-250"> 
+		<%= image_tag("/assets/icon-2.png", class: "Heading") %>
+			<h2>Stay INFORMED with</h2>
+			<small>Transparent Management by Rentorr</small> </div>
+
+		<!-- Information -->
+		<div class="row">
+			<div class="col-md-4">
+				<div class="info-div  animated fadeInLeft slow go text-center delay-600"> <span class="managementImg">
+				<!-- <img src="assets/img/landloards.svg" alt="Landlords"> -->
+				<%= image_tag("/assets/landloards.svg") %>
+				</span>
+					<h5>Landlords</h5>
+					<p>Neque porro quisquam est qui ipsum quia dolor sit amet, consectetur.</p>
+					<a href="javascript:void(0);" title="Sign Up" class="custom-btn round-btn btn-dark-gray">Sign Up</a> </div>
+			</div>
+			<div class="col-md-4">
+				<div class="info-div animated fadeIn slow go text-center delay-750"> <span class="managementImg">
+				<!-- <img src="assets/img/contractors.svg" alt="Contractors"> -->
+				<%= image_tag("/assets/contractors.svg", class: "img-fluid") %>
+				</span>
+					<h5>Contractors</h5>
+					<p>Neque porro quisquam est qui ipsum quia dolor sit amet, consectetur.</p>
+					<a href="javascript:void(0);" title="Sign Up" class="custom-btn round-btn btn-dark-gray">Sign Up</a> </div>
+			</div>
+			<div class="col-md-4">
+				<div class="info-div nb animated fadeInRight slow go text-center delay-1850"> <span class="managementImg">
+				<!-- <img src="assets/img/tenants.svg" alt="Tenants"> -->
+				<%= image_tag("/assets/tenants.svg") %>
+
+				</span>
+					<h5>Tenants</h5>
+					<p>Neque porro quisquam est qui ipsum quia dolor sit amet, consectetur.</p>
+					<a href="javascript:void(0);" title="Sign Up" class="custom-btn n-b-m round-btn btn-dark-gray">Sign Up</a> </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--rest assured section-->
+
+<div class="rest-data animatedParent animateOnce">
+	<div class="container-safe animated fadeIn slow go "> 
+	<!-- <img src="assets/img/safe-icon.png" alt="Safe"> -->
+	<%= image_tag("/assets/safe-icon.png") %>
+		<h2>Rest assured, your data
+			and transactions are safe. </h2>
+		<p> We take security seriously at Rentorr, and we protect your data and your privacy with industry-leading security measures. </p>
+	</div>
+</div>
+<div class="rent-afford animatedParent animateOnce">
+	<div class="container">
+		<div class="custom-heading animated fadeIn slow go"> 
+		<!-- <img src="assets/img/wallet-icon.png" alt="Annual Income"> -->
+		<%= image_tag("/assets/wallet-icon.png", class: "img-fluid") %>
+			<h2>How Much Rent Can I Afford?</h2>
+			<small>Let's get started! What is your annual income?</small>
+			<div class="rent"> <span class="read-only">R</span>
+				<input type="text" value="655,000" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="rent-box nb animated bounceInLeft slow go delay-250">
+					<h5>Monthly Rent at 15%</h5>
+					<h4>R8,188</h4>
+					<p class="d-none d-sm-block"> You have more important priorities in this life than your address. Your home is somewhere you rest your head and recharge so that you can get back out into the world. </p>
+					<a href="javascript:void(0);" class="btn round-btn btn-gray-outer animated bounceIn slow go"> Find Properties for R8,188 or less</a> </div>
+			</div>
+			<div class="col-sm-4">
+				<div class="rent-box animated bounceIn slow go delay-500">
+					<h5>Monthly Rent at 25%</h5>
+					<h4>R13,646</h4>
+					<p class="d-none d-sm-block"> You have more important priorities in this life than your address. Your home is somewhere you rest your head and recharge so that you can get back out into the world. </p>
+					<a href="javascript:void(0);" class="btn round-btn btn-gray-outer animated bounceIn slow go"> Find Properties for R13,646 or less</a> </div>
+			</div>
+			<div class="col-sm-4">
+				<div class="rent-box animated bounceInRight npb slow go delay-750">
+					<h5>Monthly Rent at 35%</h5>
+					<h4>R10,428</h4>
+					<p class="d-none d-sm-block"> You have more important priorities in this life than your address. Your home is somewhere you rest your head and recharge so that you can get back out into the world. </p>
+					<a href="javascript:void(0);" class="btn  round-btn btn-gray-outer animated bounceIn slow go"> Find Properties for R10,428 or less</a> </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--SignIn popup-->
+<div class="modal fade" id="signin-popup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="Sign_logo_">
+			<!-- <img alt="rentorr" src="assets/img/inner-logo_.png" class="logo-light"> -->
+			<%= image_tag("/assets/inner-logo_.png") %>
+			</div>
+			<div class="modal-body">
+				
+				<h2 class="elcome_back_cls">Hey, welcome back!</h2>
+				<form action="" method="post">
+					<div class="form-group">
+					<label>Email Address</label>
+						<input type="text" name="" placeholder="Email Address" class="form-control">
+					</div>
+				</form>
+				<div class="passwordbox" data-id='2'><label>Password</label>
+					<input class="float-left form-control" id="field" placeholder="Password" type="search" />
+					 </div>
+					 <div class="forget_btn_cls"><a href="#" class="btn-forgetpassword" data-target="#pwdModal" data-toggle="modal">Forgot my password</a></div>
+					
+				
+					
+				<div class="sign-up-all-btn"><a href="#" title="Log me in" class="btn log-me-in-btn btn-green-light"> Sign In </a></div>
+				<div class="have-an-account text-center">
+					<p>Don't have an account? <a href="#" class="SignModal" title="Sign up"><span>Sign Up</span> 
+					<%= image_tag("/assets/arrowss-gray.svg") %></a></p>
+				</div>
+			
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- forgot password--->
+
+<div class="modal fade" id="pwdModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			
+				<div class="modal-header">
+					
+					<%= image_tag("/assets/inner-logo_.png", class: "logo-light") %>
+		
+			</div>
+			<div class="modal-body">
+				<div class="switch-modal-data text-center">
+					<h3>I forgot my password!</h3>
+					<p>No problem! We'll send you an email so you can quickly
+change your password and go back to apartment surfing.</p>
+					<form action="" method="post">
+						<div class="form-group">
+							<input type="text" name="" placeholder="What’s your email?" class="form-control blue-outline">
+							<span class="w-100 text-left d-inline-block sign-up-all-btn">
+                <a class="btn nevermind-btn btn-green-light" href="#" >Cancel</a>
+                <a class="btn log-me-in-btn btn-green-light" href="#" >Reset my password</a>
+              </span>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Signup popup-->
+<div class="modal fade" id="signup-popup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+		
+			
+			<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" href="#profile" role="tab" data-toggle="tab"><span class="landloards signup-icon"></span><label>					
+					Landlord
+					
+					</label></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#buzz" role="tab" data-toggle="tab"><span class="tenants signup-icon"></span><label>
+					Tenant
+					
+					</label></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#references" role="tab" data-toggle="tab"><span class="contractor signup-icon"></span><label>
+					
+					Contractor
+					
+					</label></a>
+  </li>
+</ul>
+
+
+
+
+
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane in active" id="profile">	
+  
+  <div class="modal-body">
+    <div class="modal-body-left">
+	<h2>Sign up to Landlord</h2>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+</p><p>
+When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.
+</p><p>
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+
+<div class="signin-dirct-cls">
+
+<div class="have-an-account text-center">
+					<p>Already have an account? <a href="#" class="LoginModal" title="Log in"><span>Sign In</span> 
+					<!-- <img alt="Cats" src="assets/img/arrowss.svg"> -->
+					<%= image_tag("/assets/arrowss.svg") %>
+					</a></p>
+				</div>
+
+</div>
+	
+	</div>
+  
+    <div class="modal-body-right">
+				
+				
+				
+				<form action="" method="post">
+					<div class="form-group">   
+					<label>First and Last Name</label>
+						<input class="first_cls" type="text" name="" placeholder="First Name" class="form-control">
+						<input class="last_clss" type="text" name="" placeholder="Last Name" class="form-control">
+					</div>
+					<div class="form-group">
+					<label>Company and Phone</label>
+						<input class="first_cls" type="text" name="" placeholder="Company Name (Optional)" class="form-control">
+						<input class="last_clss" type="text" name="" placeholder="Phone Number" class="form-control">
+					</div>
+					<div class="form-group">
+					<label>Email Address</label>
+						<input type="text" name="" placeholder="Email Address" class="form-control">
+					</div>
+				
+					<div class="form-group">
+					<label>Password</label>
+						<input type="text" name="" placeholder="Password" class="form-control">     
+					</div>
+				</form>
+
+		
+				<div class="signup-text text-center">
+					<p>To protect the integrity of Rentorr, we'll text or call you to verify you're a real human. By continuing you agree
+						to our <a href="#" title="Terms">Terms</a> and <a href="#" title="Privacy Policy">Privacy Policy.</a></p>
+				</div>
+				<div class="sign-up-all-btn text-center w-100"><a href="#" title="Nevermind" class="btn nevermind-btn btn-green-light"> Nevermind </a><a href="#" title="Log me in" class="btn log-me-in-btn btn-green-light"> Sign Up </a></div>
+				
+			</div></div></div>
+  <div role="tabpanel" class="tab-pane fade" id="buzz">
+    <div class="modal-body">
+    <div class="modal-body-left">
+	<h2>Sign up to Tenant</h2>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+</p><p>
+When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.
+</p><p>
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+
+<div class="signin-dirct-cls">
+
+<div class="have-an-account text-center">
+					<p>Already have an account? <a href="#" class="LoginModal" title="Log in"><span>Sign In</span> 
+					<%= image_tag("/assets/arrowss.svg") %></a></p>
+				</div>
+
+</div>
+	
+	</div>
+  
+    <div class="modal-body-right">
+				
+				
+				
+				<form action="" method="post">
+					<div class="form-group">   
+					<label>First and Last Name</label>
+						<input class="first_cls" type="text" name="" placeholder="First Name" class="form-control">
+						<input class="last_clss" type="text" name="" placeholder="Last Name" class="form-control">
+					</div>
+				 <div class="form-group">
+					<label>Email Address</label>
+						<input type="text" name="" placeholder="Email Address" class="form-control">
+					</div>
+				<div class="form-group">
+					<label>Phone Number</label>
+						<input type="text" name="" placeholder="Phone Number" class="form-control">     
+					</div>
+					<div class="form-group">
+					<label>Password</label>
+						<input type="text" name="" placeholder="Password" class="form-control">     
+					</div>
+				</form>
+
+		
+				<div class="signup-text text-center">
+					<p>To protect the integrity of Rentorr, we'll text or call you to verify you're a real human. By continuing you agree
+						to our <a href="#" title="Terms">Terms</a> and <a href="#" title="Privacy Policy">Privacy Policy.</a></p>
+				</div>
+				<div class="sign-up-all-btn text-center w-100"><a href="#" title="Nevermind" class="btn nevermind-btn btn-green-light"> Nevermind </a><a href="#" title="Log me in" class="btn log-me-in-btn btn-green-light"> Sign Up </a></div>
+				
+			</div></div>
+  
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="references">
+  <div class="modal-body">
+    <div class="modal-body-left">
+	<h2>Sign up to Contractor</h2>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+</p><p>
+When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.
+</p><p>
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+
+<div class="signin-dirct-cls">
+
+<div class="have-an-account text-center">
+					<p>Already have an account? <a href="#" class="LoginModal" title="Log in"><span>Sign In</span> 
+					<!-- <img alt="Cats" src="assets/img/arrowss.svg"> -->
+					<%= image_tag("/assets/arrowss.svg") %>
+					</a></p>
+				</div>
+
+</div>
+	
+	</div>
+  
+    <div class="modal-body-right">
+				
+				
+				
+				<form action="" method="post">
+					<div class="form-group">   
+					<label>First and Last Name</label>
+						<input class="first_cls" type="text" name="" placeholder="First Name" class="form-control">
+						<input class="last_clss" type="text" name="" placeholder="Last Name" class="form-control">
+					</div>
+					<div class="form-group">
+					<label>Company and Phone</label>
+						<input class="first_cls" type="text" name="" placeholder="Company Name (Optional)" class="form-control">
+						<input class="last_clss" type="text" name="" placeholder="Phone Number" class="form-control">
+					</div>
+					<div class="form-group">
+					<label>Email Address</label>
+						<input type="text" name="" placeholder="Email Address" class="form-control">
+					</div>
+				
+					<div class="form-group">
+					<label>Password</label>
+						<input type="text" name="" placeholder="Password" class="form-control">     
+					</div>
+				</form>
+
+		
+				<div class="signup-text text-center">
+					<p>To protect the integrity of Rentorr, we'll text or call you to verify you're a real human. By continuing you agree
+						to our <a href="#" title="Terms">Terms</a> and <a href="#" title="Privacy Policy">Privacy Policy.</a></p>
+				</div>
+				<div class="sign-up-all-btn text-center w-100"><a href="#" title="Nevermind" class="btn nevermind-btn btn-green-light"> Nevermind </a><a href="#" title="Log me in" class="btn log-me-in-btn btn-green-light"> Sign Up </a></div>
+				
+			</div></div>
+  
+  
+  </div>
+</div>
+		
+		</div>
+	</div>
+</div>
+
+<!-- Popular cities -->
+
+<div class="pupular-cities animatedParent animateOnce">
+	<div class="container">
+		<div class="custom-heading animated fadeIn slow go delay-250"> 
+		<%= image_tag("/assets/city-icon.png")%>
+			<h2>Properties in Popular Cities</h2>
+			<small>Porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</small> </div>
+		<div class="mob20">
+			<div class="row">
+				<div class="col-6 col-lg-3 ">
+					<div class="city-list animated bounceInUp slow go delay-250">
+						<ul>
+							<li> <a href="javascript:void(0)" title="Cape Town Properties">Cape Town Properties</a></li>
+							<li><a href="javascript:void(0)" title="Johannesburg Properties">Johannesburg Properties</a></li>
+							<li><a href="javascript:void(0)" title="Durban Properties">Durban Properties</a></li>
+							<li><a href="javascript:void(0)" title="Pretoria Properties">Pretoria Properties</a></li>
+							<li><a href="javascript:void(0)" title="Port Elizabeth Properties">Port Elizabeth Properties</a></li>
+							<li><a href="javascript:void(0)" title="Bloemfontein Properties">Bloemfontein Properties</a></li>
+							<li><a href="javascript:void(0)" title="Nelspruit Properties">Nelspruit Properties</a></li>
+							<li><a href="javascript:void(0)" title="Kimberley Properties">Kimberley Properties</a></li>
+							<li><a href="javascript:void(0)" title="Polokwane Properties">Polokwane Properties</a></li>
+							<li><a href="javascript:void(0)" title="Pietermaritzburg Properties">Pietermaritzburg Properties</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-6 col-lg-3">
+					<div class="city-list animated bounceInUp slow go delay-500">
+						<ul>
+							<li> <a href="javascript:void(0)" title="Strand Properties">Strand Properties</a></li>
+							<li><a href="javascript:void(0)" title="Paarl Properties">Paarl Properties</a></li>
+							<li><a href="javascript:void(0)" title="Bellville Properties">Bellville Properties</a></li>
+							<li><a href="javascript:void(0)" title="Hout Bay Properties">Hout Bay Properties</a></li>
+							<li><a href="javascript:void(0)" title="Strand Properties">Strand Properties</a></li>
+							<li><a href="javascript:void(0)" title="Somerset West Properties">Somerset West Properties</a></li>
+							<li><a href="javascript:void(0)" title="Stellenbosch Properties">Stellenbosch Properties</a></li>
+							<li><a href="javascript:void(0)" title="Hout Bay Properties">Hout Bay Properties</a></li>
+							<li><a href="javascript:void(0)" title="Montana Properties">Montana Properties</a></li>
+							<li><a href="javascript:void(0)" title="Worcester Properties">Worcester Properties</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-6 col-lg-3">
+					<div class="city-list animated bounceInUp slow go delay-750">
+						<ul>
+							<li> <a href="javascript:void(0)" title="Swellendam Properties">Swellendam Properties</a></li>
+							<li><a href="javascript:void(0)" title="Simon’s Town Properties">Simon’s Town Properties</a></li>
+							<li><a href="javascript:void(0)" title="Oudtshoorn Properties">Oudtshoorn Properties</a></li>
+							<li><a href="javascript:void(0)" title="Hopefield Properties">Hopefield Properties</a></li>
+							<li><a href="javascript:void(0)" title="George Properties">George Properties</a></li>
+							<li><a href="javascript:void(0)" title="Constantia Properties">Constantia Properties</a></li>
+							<li><a href="javascript:void(0)" title="Port Nolloth Properties">Port Nolloth Properties</a></li>
+							<li><a href="javascript:void(0)" title="Kuruman Properties">Kuruman Properties</a></li>
+							<li><a href="javascript:void(0)" title="Rustenburg Properties">Rustenburg Properties</a></li>
+							<li><a href="javascript:void(0)" title="Potchefstroom Properties">Potchefstroom Properties</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-6 col-lg-3">
+					<div class="city-list last animated bounceInUp slow go delay-1000">
+						<ul>
+							<li> <a href="javascript:void(0)" title="Mmabatho Properties">Mmabatho Properties</a></li>
+							<li><a href="javascript:void(0)" title="Mahikeng Properties">Mahikeng Properties</a></li>
+							<li><a href="javascript:void(0)" title="Klerksdorp Properties">Klerksdorp Properties</a></li>
+							<li><a href="javascript:void(0)" title="Secunda Properties">Secunda Properties</a></li>
+							<li><a href="javascript:void(0)" title="Nelspruit Properties">Nelspruit Properties</a></li>
+							<li><a href="javascript:void(0)" title="Emalahleni Properties">Emalahleni Properties</a></li>
+							<li><a href="javascript:void(0)" title="Thabazimbi Properties">Thabazimbi Properties</a></li>
+							<li><a href="javascript:void(0)" title="Sibasa Properties">Sibasa Properties</a></li>
+							<li><a href="javascript:void(0)" title="Seshego Properties">Seshego Properties</a></li>
+							<li><a href="javascript:void(0)" title="Polokwane Properties">Polokwane Properties</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a href="" class="custom-btn round-btn btn-dark-gray m-t-80 animated bounceIn slow go delay-1250">Find Home Now</a> </div>
+</div>
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="footer-link float-left">
+				<ul>
+					<li class="footer-logo"><a href="javascript:void(0);">
+					<!-- <img src="assets/img/footer-logo.png" alt="Footer Logo" /> -->
+					<%= image_tag("/assets/footer-logo.png")%>
+					</a></li>
+					<li><a href="javascript:void(0);" title="JOBS">Jobs</a></li>
+					<li><a href="javascript:void(0);" title="BLOG">Blog</a></li>
+					<li><a href="javascript:void(0);" title="KEEP IN TOUCH">Keep In Touch</a>
+						<ul class="sub-menu">
+							<li><a href="javascript:(0);" title="Email Us">Email Us</a></li>
+							<li><a href="javascript:(0);" title="Facebook" class="facebook">Facebook</a></li>
+							<li><a href="javascript:(0);" title="Twitter" class="twitter">Twitter</a></li>
+							<li><a href="javascript:(0);" title="Instagram" class="instagram">Instagram</a></li>
+							<li><a href="javascript:(0);" title="Youtube" class="youtube">Youtube</a></li>
+						</ul>
+					</li>
+					<li><a href="javascript:void(0);" title="PRIVACY">Privacy</a></li>
+					<li><a href="javascript:void(0);" title="TERMS">Terms</a></li>
+					<li class="extralinks"><a href="javascript:void(0);" class="more-btn round-btn"><span class="more-dots"></span><span class="more-dots"></span><span class="more-dots"></span></a>
+						<ul class="sub-menu more-details">
+							<li><a href="javascript:(0);" title="Apartments for rent">Apartments for rent</a></li>
+							<li><a href="javascript:(0);" title="Houses for rent">Houses for rent</a></li>
+							<li><a href="javascript:(0);" title="Duplex for rent">Duplex for rent</a></li>
+							<li><a href="javascript:(0);" title="Ask Rentorr">Ask Rentorr</a></li>
+							<li><a href="javascript:(0);" title="Renter stories">Renter stories</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="copyright float-right text-sm-right">
+				<p> Made With <i class="fa fa-heart" aria-hidden="true"></i> In South Africa. Copyright Rentorr &reg;
+					<script type="text/javascript">
+              var year = new Date();
+              document.write(year.getFullYear());
+            </script>
+				</p>
+			</div>
+		</div>
+	</div>
+	</div>
+</footer>
+</body>
+</html>

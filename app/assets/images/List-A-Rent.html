@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="apple-touch-icon" sizes="57x57" href="assets/img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="assets/img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="assets/img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="assets/img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="assets/img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="assets/img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/img/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+<link rel="manifest" href="assets/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="assets/img/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Welcome to Rentorr</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="assets/css/master.css"> -->
+<%= stylesheet_link_tag "home/master.css.css" %>
+<link rel="stylesheet" href="assets/css/normalize.css">
+<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600,700" rel="stylesheet"> -->
+<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<link rel="stylesheet" href="assets/css/animations.css">
+<link rel="stylesheet" href="assets/css/animations-ie-fix.css">
+<link rel="stylesheet" href="assets/css/jquery.autocompleter.css">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+
+<body class="filterpage">
+<header id="header" class="header-light navbar-dark navbar-toggleable-md inner-header">
+	<div class="container-fluid">
+		<div class="logo float-left"> <a href="index.html"> <img class="logo-light" src="assets/img/inner-logo.png" alt="rentorr"> </a> </div>
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+		<div class="collapse navbar-collapse fl-right" id="navbarNavAltMarkup"> <span id="closeIcon" class="close-nav"> <i class="ion ion-ios-close-empty"> </i> </span>
+			<div class="float-left nav-left">
+				<ul>
+					<li> <a href="javascript:void(0);" title="Rent a Place"> Rent a Place </a> </li>
+					<li> <a href="javascript:void(0);" title="Hire a Contractor "> Hire a Contractor </a> </li>
+					<li> <a href="javascript:void(0);" title="List a Rental "> List a Rental </a> </li>
+				</ul>
+			</div>
+			<div class="auth float-right">
+				<ul>
+					<li> <a href="" class="btn outer-btn" title="Sign Up"> <i class="ion ion-ios-plus-empty plus"></i> <span>Sign up</span></a> </li>
+					<li> <a href="" class="btn outer-btn" title="Sign In"> <i class="ion ion-log-in signin"></i> <span>Sign in</span></a> </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+
+<!-- Rentorr -->
+
+<div class="business-containers  animatedParent  animateOnce">
+
+<div class="listarent-cls">
+<h1>Rentorr gives you the tools to rent your </br>
+place faster and for make more money</h1>
+
+<p>Screen renters, sign leases electronically and get paid rents instantly.</p>
+
+<div class="listarent_cls_inner">
+<h3>Ready? Let's get started:</h3>
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">I have a place to rent</a>
+    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">I need a roommate</a>
+    
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+  <div class="list_field">
+  
+     <div class="form-group "> 
+                <input type="text" class="form-control" placeholder="Your place’s address..."> 
+				<a href="#" class="unit_cls">Unit #</a>
+            </div> 
+			<div class="drop_field_list">
+			<div class="row">
+  <div class="col-md-6 mb-3">
+  	
+      <select class="form-control form-control-lg" name="category" id="validationCustom03" onchange="ChangecatList()" required>
+        <option value="">How many bedrooms?</option>
+        <option value="Classroom Instruction and Assessment">1</option>
+        <option value="Curriculum Development and Alignment">2</option>
+        <option value="District Committee">3</option>
+        </select>
+	
+  </div>  <div class="col-md-6 mb-3">
+  	
+      <select class="form-control form-control-lg" name="category" id="validationCustom03" onchange="ChangecatList()" required>
+        <option value="">How many bathrooms?</option>
+        <option value="Classroom Instruction and Assessment">1</option>
+        <option value="Curriculum Development and Alignment">2</option>
+        <option value="District Committee">3</option>
+        </select>
+	
+  </div>
+ 
+</div>
+<a class="btn round-btn btn-gray-outer animated bounceIn slow go" href="javascript:void(0);"> List Your Place</a>
+ </div>
+  
+  
+  </div>
+  
+  </div>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+
+</div>
+
+
+</div>
+</div>
+	
+</div>
+
+<!-- Rentorr listing -->
+
+
+<div class="top-ratings animatedParent animateOnce">
+	<div class="container">
+	
+	<div class="mob20">
+	<h1 class="rating-heading">Over <span>100 units</span> call us for our performance-based partnerships</h1>
+			<div class="row animatedParent animateOnce">
+			
+				<div class="col-sm-4 col-lg-4 col-12">
+				<div class="list-div animated fadeInLeft slow go delay-250" data-id='5'> 
+						
+					<h2>R199/ <span>Month</span></h2>
+					<P>1-10 Active listings</p>
+					</div>
+				</div>
+				
+					<div class="col-sm-4 col-lg-4 col-12">
+				<div class="list-div animated fadeIn slow go delay-250" data-id='5'> 
+						
+					<h2>R499/ <span>Month</span></h2>
+					<P>11-50 Active listings</p>
+					</div>
+				</div>
+				
+				
+					<div class="col-sm-4 col-lg-4 col-12">
+				<div class="list-div animated fadeInRight slow go delay-250" data-id='5'> 
+						
+					<h2>R799/ <span>Month</span></h2>
+					<P>51-100 Active listings</p>
+					</div>
+				</div>
+				
+				
+				
+				
+				</div>
+				
+				<p>All account levels include access to our iOS and Android mobile apps which</br> have best-in-class tenant onboarding tools like rental applications, rent</br> payments, and lease signing.<p>
+				
+				<div class="Get Started"><a class="btn round-btn btn-gray-outer animated bounceIn slow go" href="javascript:void(0);"> Get Started</a></div>
+				</div>
+</div>
+	
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/ca690728c1.js"></script>
+<script src="assets/js/functions.js"></script>
+</body>
+</html>
